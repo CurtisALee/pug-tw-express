@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run watch:css & npm run watch:pug & nodemon index.js",
+    "start": "npm run watch:css & nodemon index.js",
     "build": "npm run build:css && npm run build:pug",
     "build:css": "NODE_ENV=production postcss src/css/style.css -o public/css/style.css",
     "watch:css": "postcss src/css/style.css -o public/css/style.css -w",
@@ -14,14 +14,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "^10.4.14",
     "express": "^4.18.2",
     "glob": "^9.3.4",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.22",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
-    "pug": "^3.0.2",
     "tailwindcss": "^3.3.1"
   },
   "postcss": {

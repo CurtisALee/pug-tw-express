@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const pug = require('pug')
 
 const path = require('path');
 const glob = require('glob');
@@ -12,7 +13,7 @@ app.use(express.static('public'));
 glob.sync('./pages/**/*.pug').forEach((file) => {
   const name = path.basename(file, '.pug');
   app.get('/' + name, (req, res) => {
-    res.render('pages/' + name);
+    res.send(pug.renderFile('pages/' + name+'.pug'));
   });
 });
 
@@ -20,9 +21,6 @@ app.get('/', (req, res) => {
   res.redirect('/index');
 });
 
-app.get('/index', (req, res) => {
-  res.render('index');
-});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
