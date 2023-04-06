@@ -1,0 +1,12 @@
+extends ../views/layout
+
+block content
+  h1.bg-blue-50 Template test
+
+  a(href='/about') About page
+
+  +project-card({
+    href: "https://nuom-project-template.webflow.io/style-system/base-styles",
+    heading: "Webflow Starter | nuom",
+    text: "A custom built Webflow template for nuom",
+  })
