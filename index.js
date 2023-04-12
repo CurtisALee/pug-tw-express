@@ -9,6 +9,7 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'src', 'pages'));
 
 app.use(express.static('public'));
+app.use('/images', express.static(path.join(__dirname, 'src', 'images')));
 
 glob.sync('./src/pages/**/*.pug').forEach((file) => {
   const name = path.basename(file, '.pug');
