@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run watch:css & npm run watch:pug & nodemon index.js",
+    "start": "npm run watch:css & npm run watch:pug & nodemon index.js & npm run sync",
     "build": "npm run build:css && npm run build:pug",
     "build:css": "NODE_ENV=production postcss src/css/style.css -o public/css/style.css",
     "watch:css": "postcss src/css/style.css -o public/css/style.css -w",
     "build:pug": "NODE_ENV=production pug src/pages -o public -P && cp -R src/images public",
-    "watch:pug": "pug src/pages -o public -P -w"
+    "watch:pug": "pug src/pages -o public -P -w",
+    "sync": "browser-sync start --proxy 'localhost:3000' --files 'src/**/*.pug'"
+
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.1",
     "nodemon": "^2.0.22",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
