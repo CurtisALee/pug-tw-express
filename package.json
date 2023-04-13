@@ -8,8 +8,8 @@
     "build": "npm run build:css && npm run build:pug",
     "build:css": "NODE_ENV=production postcss src/css/style.css -o public/css/style.css",
     "watch:css": "postcss src/css/style.css -o public/css/style.css -w",
-    "build:pug": "NODE_ENV=production pug src/pages -o public/pages -P",
-    "watch:pug": "pug src/pages -o public/pages -P -w"
+    "build:pug": "NODE_ENV=production pug src/pages -o public -P",
+    "watch:pug": "pug src/pages -o public -P -w"
   },
   "keywords": [],
   "author": "",
